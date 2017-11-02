@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RadialCharts } from './init';
 
 @Component({
   selector: 'app-radial',
@@ -10,6 +11,7 @@ export class RadialComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    RadialCharts();
   }
 
 }
