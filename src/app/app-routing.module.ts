@@ -3,12 +3,13 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { NaviComponent } from './navi/navi.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardsComponent } from './cards/cards.component';
+import { MemberOnlyGuard } from './member-only.guard';
 
 const routes: Routes = [
   {
     path: '', component: NaviComponent, children: [
-      { path: '', component: DashboardComponent },
-      { path: 'dashboard', component: DashboardComponent },
+      { path: '', component: DashboardComponent, canActivate: [MemberOnlyGuard] },
+      { path: 'dashboard', component: DashboardComponent, canActivate: [MemberOnlyGuard] },
       { path: 'cards', component: CardsComponent },
       { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
       { path: 'forms', loadChildren: './forms/forms.module#ForrmsModule' },

@@ -9,6 +9,9 @@ import { ErrorModule } from './error/error.module';
 import { NaviComponent } from './navi/navi.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardsComponent } from './cards/cards.component';
+import { MemberOnlyGuard } from './member-only.guard';
+import { RemindLeaveGuard } from './remind-leave.guard';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,7 @@ import { CardsComponent } from './cards/cards.component';
     ErrorModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [MemberOnlyGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

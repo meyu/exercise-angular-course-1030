@@ -6,7 +6,7 @@
         <form id="user-login" action="" name="loginForm" novalidate="" class="card b0 form-validate">
           <div class="card-offset pb0">
             <div class="card-offset-item text-right">
-              <a href="signup.html" class="btn-raised btn btn-info btn-circle btn-lg">
+              <a routerLink="/user/signup" class="btn-raised btn btn-info btn-circle btn-lg">
                 <em class="ion-person-add"></em>
               </a>
             </div>
@@ -22,7 +22,7 @@
           <div class="card-body">
             <div class="mda-form-group float-label mda-input-group">
               <div class="mda-form-control">
-                <input type="email" name="accountName" required="" class="form-control">
+                <input type="email" name="accountName" required="" class="form-control" [(ngModel)]="username">
                 <div class="mda-form-control-line"></div>
                 <label>Email address</label>
               </div>
@@ -32,7 +32,7 @@
             </div>
             <div class="mda-form-group float-label mda-input-group">
               <div class="mda-form-control">
-                <input type="password" name="accountPassword" required="" class="form-control">
+                <input type="password" name="accountPassword" required="" class="form-control" [(ngModel)]="password">
                 <div class="mda-form-control-line"></div>
                 <label>Password</label>
               </div>

@@ -4,12 +4,13 @@ import { LoginComponent } from './login/login.component';
 import { LockComponent } from './lock/lock.component';
 import { SignupComponent } from './signup/signup.component';
 import { RecoverComponent } from './recover/recover.component';
+import { RemindLeaveGuard } from '../remind-leave.guard';
 
 const routes: Routes = [
   {
     // 不被navi框住的連結
     path: 'do', children: [
-      { path: 'login', component: LoginComponent },
+      { path: 'login', component: LoginComponent, canDeactivate: [RemindLeaveGuard] },
       { path: 'lock', component: LockComponent },
       { path: 'signup', component: SignupComponent },
       { path: 'recover', component: RecoverComponent },
@@ -17,7 +18,7 @@ const routes: Routes = [
     ]
   },
   // 會被navi框住的連結
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canDeactivate: [RemindLeaveGuard] },
   { path: 'lock', component: LockComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'recover', component: RecoverComponent },
